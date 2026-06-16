@@ -1,0 +1,490 @@
+ID,team_id,country,team_code,confederation_name,region_name,tournament_id,tournament_name,year,matches_played,total_goals,stage_reached
+WC-1930_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,5,18,final
+WC-1930_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1930,1930 FIFA Men's World Cup,1930,2,0,group stage
+WC-1930_BOL,T-07,Bolivia,BOL,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,2,0,group stage
+WC-1930_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,2,5,group stage
+WC-1930_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,3,5,group stage
+WC-1930_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1930,1930 FIFA Men's World Cup,1930,3,4,group stage
+WC-1930_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1930,1930 FIFA Men's World Cup,1930,3,4,group stage
+WC-1930_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,2,1,group stage
+WC-1930_PER,T-56,Peru,PER,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,2,1,group stage
+WC-1930_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1930,1930 FIFA Men's World Cup,1930,2,3,group stage
+WC-1930_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1930,1930 FIFA Men's World Cup,1930,3,7,semi-finals
+WC-1930_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1930,1930 FIFA Men's World Cup,1930,4,15,final
+WC-1930_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1930,1930 FIFA Men's World Cup,1930,3,7,semi-finals
+WC-1934_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1934,1934 FIFA Men's World Cup,1934,1,2,round of 16
+WC-1934_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,4,7,third-place match
+WC-1934_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,1,2,round of 16
+WC-1934_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1934,1934 FIFA Men's World Cup,1934,1,1,round of 16
+WC-1934_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,4,9,final
+WC-1934_EGY,T-26,Egypt,EGY,Confederation of African Football,Africa,WC-1934,1934 FIFA Men's World Cup,1934,1,2,round of 16
+WC-1934_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,1,2,round of 16
+WC-1934_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,4,11,third-place match
+WC-1934_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,2,5,quarter-finals
+WC-1934_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,5,12,final
+WC-1934_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,1,2,round of 16
+WC-1934_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,1,1,round of 16
+WC-1934_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,3,4,quarter-finals
+WC-1934_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,2,4,quarter-finals
+WC-1934_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1934,1934 FIFA Men's World Cup,1934,2,5,quarter-finals
+WC-1934_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1934,1934 FIFA Men's World Cup,1934,1,1,round of 16
+WC-1938_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,1,1,round of 16
+WC-1938_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1938,1938 FIFA Men's World Cup,1938,5,14,third-place match
+WC-1938_CUB,T-19,Cuba,CUB,"Confederation of North, Central American and Caribbean Association Football",Caribbean,WC-1938,1938 FIFA Men's World Cup,1938,3,5,quarter-finals
+WC-1938_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,3,5,quarter-finals
+WC-1938_IDN,T-23,Dutch East Indies,IDN,Asian Football Confederation,South East Asia,WC-1938,1938 FIFA Men's World Cup,1938,1,0,round of 16
+WC-1938_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,2,4,quarter-finals
+WC-1938_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,2,3,round of 16
+WC-1938_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,4,15,final
+WC-1938_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,4,11,final
+WC-1938_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,1,0,round of 16
+WC-1938_NOR,T-53,Norway,NOR,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,1,1,round of 16
+WC-1938_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,1,5,round of 16
+WC-1938_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,2,4,round of 16
+WC-1938_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,3,11,third-place match
+WC-1938_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1938,1938 FIFA Men's World Cup,1938,3,5,quarter-finals
+WC-1950_BOL,T-07,Bolivia,BOL,South American Football Confederation,South America,WC-1950,1950 FIFA Men's World Cup,1950,1,0,group stage
+WC-1950_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1950,1950 FIFA Men's World Cup,1950,6,22,final round
+WC-1950_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1950,1950 FIFA Men's World Cup,1950,3,5,group stage
+WC-1950_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,3,2,group stage
+WC-1950_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,2,4,group stage
+WC-1950_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1950,1950 FIFA Men's World Cup,1950,3,2,group stage
+WC-1950_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-1950,1950 FIFA Men's World Cup,1950,2,2,group stage
+WC-1950_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,6,10,final round
+WC-1950_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,5,11,final round
+WC-1950_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,3,4,group stage
+WC-1950_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1950,1950 FIFA Men's World Cup,1950,3,4,group stage
+WC-1950_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1950,1950 FIFA Men's World Cup,1950,4,15,final round
+WC-1950_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1950,1950 FIFA Men's World Cup,1950,3,7,group stage
+WC-1954_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,5,17,third-place match
+WC-1954_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,2,5,group stage
+WC-1954_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1954,1954 FIFA Men's World Cup,1954,3,8,quarter-finals
+WC-1954_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,2,0,group stage
+WC-1954_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,3,8,quarter-finals
+WC-1954_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,2,3,group stage
+WC-1954_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,5,27,final
+WC-1954_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,3,6,group stage
+WC-1954_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1954,1954 FIFA Men's World Cup,1954,2,2,group stage
+WC-1954_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,2,0,group stage
+WC-1954_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-1954,1954 FIFA Men's World Cup,1954,2,0,group stage
+WC-1954_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,4,11,quarter-finals
+WC-1954_TUR,T-80,Turkey,TUR,Union of European Football Associations,"Europe, Asia",WC-1954,1954 FIFA Men's World Cup,1954,3,10,group stage
+WC-1954_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1954,1954 FIFA Men's World Cup,1954,5,16,third-place match
+WC-1954_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,6,25,final
+WC-1954_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1954,1954 FIFA Men's World Cup,1954,3,2,quarter-finals
+WC-1958_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1958,1958 FIFA Men's World Cup,1958,3,5,group stage
+WC-1958_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,3,2,group stage
+WC-1958_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1958,1958 FIFA Men's World Cup,1958,6,16,final
+WC-1958_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,4,9,group stage
+WC-1958_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,4,4,group stage
+WC-1958_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,6,23,third-place match
+WC-1958_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,4,7,group stage
+WC-1958_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1958,1958 FIFA Men's World Cup,1958,3,1,group stage
+WC-1958_NIR,T-52,Northern Ireland,NIR,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,5,6,quarter-finals
+WC-1958_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-1958,1958 FIFA Men's World Cup,1958,3,9,group stage
+WC-1958_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,3,4,group stage
+WC-1958_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1958,1958 FIFA Men's World Cup,1958,5,5,quarter-finals
+WC-1958_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,6,12,final
+WC-1958_WAL,T-85,Wales,WAL,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,5,4,quarter-finals
+WC-1958_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,6,12,third-place match
+WC-1958_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1958,1958 FIFA Men's World Cup,1958,4,7,quarter-finals
+WC-1962_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1962,1962 FIFA Men's World Cup,1962,3,2,group stage
+WC-1962_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1962,1962 FIFA Men's World Cup,1962,6,14,final
+WC-1962_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,3,1,group stage
+WC-1962_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1962,1962 FIFA Men's World Cup,1962,6,10,third-place match
+WC-1962_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-1962,1962 FIFA Men's World Cup,1962,3,5,group stage
+WC-1962_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,6,7,final
+WC-1962_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,4,5,quarter-finals
+WC-1962_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,4,8,quarter-finals
+WC-1962_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,3,3,group stage
+WC-1962_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1962,1962 FIFA Men's World Cup,1962,3,3,group stage
+WC-1962_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1962,1962 FIFA Men's World Cup,1962,4,9,quarter-finals
+WC-1962_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,3,2,group stage
+WC-1962_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,3,2,group stage
+WC-1962_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1962,1962 FIFA Men's World Cup,1962,3,4,group stage
+WC-1962_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,4,4,quarter-finals
+WC-1962_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1962,1962 FIFA Men's World Cup,1962,6,10,third-place match
+WC-1966_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1966,1966 FIFA Men's World Cup,1966,4,4,quarter-finals
+WC-1966_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1966,1966 FIFA Men's World Cup,1966,3,4,group stage
+WC-1966_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,3,1,group stage
+WC-1966_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1966,1966 FIFA Men's World Cup,1966,3,2,group stage
+WC-1966_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,6,11,final
+WC-1966_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,3,2,group stage
+WC-1966_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,4,8,quarter-finals
+WC-1966_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,3,2,group stage
+WC-1966_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1966,1966 FIFA Men's World Cup,1966,3,1,group stage
+WC-1966_PRK,T-51,North Korea,PRK,Asian Football Confederation,East Asia,WC-1966,1966 FIFA Men's World Cup,1966,4,5,quarter-finals
+WC-1966_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,6,17,third-place match
+WC-1966_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1966,1966 FIFA Men's World Cup,1966,6,10,third-place match
+WC-1966_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,3,4,group stage
+WC-1966_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,3,1,group stage
+WC-1966_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1966,1966 FIFA Men's World Cup,1966,4,2,quarter-finals
+WC-1966_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1966,1966 FIFA Men's World Cup,1966,6,15,final
+WC-1970_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,3,4,group stage
+WC-1970_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1970,1970 FIFA Men's World Cup,1970,6,19,final
+WC-1970_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,3,5,group stage
+WC-1970_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,3,2,group stage
+WC-1970_SLV,T-27,El Salvador,SLV,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-1970,1970 FIFA Men's World Cup,1970,3,0,group stage
+WC-1970_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,4,4,quarter-finals
+WC-1970_ISR,T-40,Israel,ISR,Union of European Football Associations,Middle East,WC-1970,1970 FIFA Men's World Cup,1970,3,1,group stage
+WC-1970_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,6,10,final
+WC-1970_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1970,1970 FIFA Men's World Cup,1970,4,6,quarter-finals
+WC-1970_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-1970,1970 FIFA Men's World Cup,1970,3,2,group stage
+WC-1970_PER,T-56,Peru,PER,South American Football Confederation,South America,WC-1970,1970 FIFA Men's World Cup,1970,4,9,quarter-finals
+WC-1970_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,3,4,group stage
+WC-1970_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1970,1970 FIFA Men's World Cup,1970,4,6,quarter-finals
+WC-1970_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,3,2,group stage
+WC-1970_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1970,1970 FIFA Men's World Cup,1970,6,4,third-place match
+WC-1970_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1970,1970 FIFA Men's World Cup,1970,6,17,third-place match
+WC-1974_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1974,1974 FIFA Men's World Cup,1974,6,9,second group stage
+WC-1974_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-1974,1974 FIFA Men's World Cup,1974,3,0,group stage
+WC-1974_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1974,1974 FIFA Men's World Cup,1974,7,6,third-place match
+WC-1974_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,3,2,group stage
+WC-1974_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1974,1974 FIFA Men's World Cup,1974,3,1,group stage
+WC-1974_DDR,T-24,East Germany,DDR,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,6,5,second group stage
+WC-1974_HTI,T-34,Haiti,HTI,"Confederation of North, Central American and Caribbean Association Football",Caribbean,WC-1974,1974 FIFA Men's World Cup,1974,3,2,group stage
+WC-1974_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,3,5,group stage
+WC-1974_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,7,15,final
+WC-1974_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,7,16,third-place match
+WC-1974_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,3,3,group stage
+WC-1974_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,6,7,second group stage
+WC-1974_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1974,1974 FIFA Men's World Cup,1974,3,1,group stage
+WC-1974_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,7,13,final
+WC-1974_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1974,1974 FIFA Men's World Cup,1974,6,12,second group stage
+WC-1974_COD,T-88,Zaire,COD,Confederation of African Football,Africa,WC-1974,1974 FIFA Men's World Cup,1974,3,0,group stage
+WC-1978_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1978,1978 FIFA Men's World Cup,1978,7,15,final
+WC-1978_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,6,7,second group stage
+WC-1978_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1978,1978 FIFA Men's World Cup,1978,7,10,third-place match
+WC-1978_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,3,5,group stage
+WC-1978_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,3,3,group stage
+WC-1978_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-1978,1978 FIFA Men's World Cup,1978,3,2,group stage
+WC-1978_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,7,9,third-place match
+WC-1978_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1978,1978 FIFA Men's World Cup,1978,3,2,group stage
+WC-1978_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,7,15,final
+WC-1978_PER,T-56,Peru,PER,South American Football Confederation,South America,WC-1978,1978 FIFA Men's World Cup,1978,6,7,second group stage
+WC-1978_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,6,6,second group stage
+WC-1978_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,3,5,group stage
+WC-1978_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,3,2,group stage
+WC-1978_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,3,1,group stage
+WC-1978_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-1978,1978 FIFA Men's World Cup,1978,3,3,group stage
+WC-1978_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1978,1978 FIFA Men's World Cup,1978,6,10,second group stage
+WC-1982_DZA,T-01,Algeria,DZA,Confederation of African Football,Africa,WC-1982,1982 FIFA Men's World Cup,1982,3,5,group stage
+WC-1982_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1982,1982 FIFA Men's World Cup,1982,5,8,second group stage
+WC-1982_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,5,5,second group stage
+WC-1982_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,5,3,second group stage
+WC-1982_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1982,1982 FIFA Men's World Cup,1982,5,15,second group stage
+WC-1982_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-1982,1982 FIFA Men's World Cup,1982,3,1,group stage
+WC-1982_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1982,1982 FIFA Men's World Cup,1982,3,3,group stage
+WC-1982_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1982_SLV,T-27,El Salvador,SLV,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-1982,1982 FIFA Men's World Cup,1982,3,1,group stage
+WC-1982_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,5,6,second group stage
+WC-1982_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,7,16,third-place match
+WC-1982_HND,T-35,Honduras,HND,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1982_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,3,12,group stage
+WC-1982_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,7,12,final
+WC-1982_KWT,T-45,Kuwait,KWT,Asian Football Confederation,Middle East,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1982_NZL,T-49,New Zealand,NZL,Oceania Football Confederation,Oceania,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1982_NIR,T-52,Northern Ireland,NIR,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,5,5,second group stage
+WC-1982_PER,T-56,Peru,PER,South American Football Confederation,South America,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1982_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,7,11,third-place match
+WC-1982_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,3,8,group stage
+WC-1982_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1982,1982 FIFA Men's World Cup,1982,5,7,second group stage
+WC-1982_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,5,4,second group stage
+WC-1982_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,7,12,final
+WC-1982_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1982,1982 FIFA Men's World Cup,1982,3,2,group stage
+WC-1986_DZA,T-01,Algeria,DZA,Confederation of African Football,Africa,WC-1986,1986 FIFA Men's World Cup,1986,3,1,group stage
+WC-1986_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1986,1986 FIFA Men's World Cup,1986,7,14,final
+WC-1986_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,7,12,third-place match
+WC-1986_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1986,1986 FIFA Men's World Cup,1986,5,10,quarter-finals
+WC-1986_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,4,2,round of 16
+WC-1986_CAN,T-12,Canada,CAN,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1986,1986 FIFA Men's World Cup,1986,3,0,group stage
+WC-1986_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,4,10,round of 16
+WC-1986_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,5,7,quarter-finals
+WC-1986_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,7,12,third-place match
+WC-1986_HUN,T-36,Hungary,HUN,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,3,2,group stage
+WC-1986_IRQ,T-39,Iraq,IRQ,Asian Football Confederation,Middle East,WC-1986,1986 FIFA Men's World Cup,1986,3,1,group stage
+WC-1986_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,4,5,round of 16
+WC-1986_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1986,1986 FIFA Men's World Cup,1986,5,6,quarter-finals
+WC-1986_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-1986,1986 FIFA Men's World Cup,1986,4,3,round of 16
+WC-1986_NIR,T-52,Northern Ireland,NIR,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,3,2,group stage
+WC-1986_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-1986,1986 FIFA Men's World Cup,1986,4,4,round of 16
+WC-1986_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,4,1,round of 16
+WC-1986_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,3,2,group stage
+WC-1986_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,3,1,group stage
+WC-1986_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-1986,1986 FIFA Men's World Cup,1986,3,4,group stage
+WC-1986_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1986,1986 FIFA Men's World Cup,1986,4,12,round of 16
+WC-1986_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,5,11,quarter-finals
+WC-1986_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1986,1986 FIFA Men's World Cup,1986,4,2,round of 16
+WC-1986_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1986,1986 FIFA Men's World Cup,1986,7,8,final
+WC-1990_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1990,1990 FIFA Men's World Cup,1990,7,5,final
+WC-1990_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,3,2,group stage
+WC-1990_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,4,6,round of 16
+WC-1990_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1990,1990 FIFA Men's World Cup,1990,4,4,round of 16
+WC-1990_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-1990,1990 FIFA Men's World Cup,1990,5,7,quarter-finals
+WC-1990_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-1990,1990 FIFA Men's World Cup,1990,4,4,round of 16
+WC-1990_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-1990,1990 FIFA Men's World Cup,1990,4,4,round of 16
+WC-1990_CSK,T-21,Czechoslovakia,CSK,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,5,10,quarter-finals
+WC-1990_EGY,T-26,Egypt,EGY,Confederation of African Football,Africa,WC-1990,1990 FIFA Men's World Cup,1990,3,1,group stage
+WC-1990_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,7,8,third-place match
+WC-1990_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,7,10,third-place match
+WC-1990_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,4,3,round of 16
+WC-1990_IRL,T-60,Republic of Ireland,IRL,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,5,2,quarter-finals
+WC-1990_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,4,4,round of 16
+WC-1990_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,3,2,group stage
+WC-1990_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-1990,1990 FIFA Men's World Cup,1990,3,1,group stage
+WC-1990_SUN,T-72,Soviet Union,SUN,Union of European Football Associations,"Europe, Asia",WC-1990,1990 FIFA Men's World Cup,1990,3,4,group stage
+WC-1990_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,4,6,round of 16
+WC-1990_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,3,3,group stage
+WC-1990_ARE,T-82,United Arab Emirates,ARE,Asian Football Confederation,Middle East,WC-1990,1990 FIFA Men's World Cup,1990,3,2,group stage
+WC-1990_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1990,1990 FIFA Men's World Cup,1990,3,2,group stage
+WC-1990_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-1990,1990 FIFA Men's World Cup,1990,4,2,round of 16
+WC-1990_DEU,T-86,West Germany,DEU,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,7,15,final
+WC-1990_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1990,1990 FIFA Men's World Cup,1990,5,8,quarter-finals
+WC-1994_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1994,1994 FIFA Men's World Cup,1994,4,8,round of 16
+WC-1994_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,4,4,round of 16
+WC-1994_BOL,T-07,Bolivia,BOL,South American Football Confederation,South America,WC-1994,1994 FIFA Men's World Cup,1994,3,1,group stage
+WC-1994_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1994,1994 FIFA Men's World Cup,1994,7,11,final
+WC-1994_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,7,10,third-place match
+WC-1994_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-1994,1994 FIFA Men's World Cup,1994,3,3,group stage
+WC-1994_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-1994,1994 FIFA Men's World Cup,1994,3,4,group stage
+WC-1994_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,5,9,quarter-finals
+WC-1994_GRC,T-33,Greece,GRC,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,3,0,group stage
+WC-1994_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,7,8,final
+WC-1994_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1994,1994 FIFA Men's World Cup,1994,4,4,round of 16
+WC-1994_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-1994,1994 FIFA Men's World Cup,1994,3,2,group stage
+WC-1994_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,5,8,quarter-finals
+WC-1994_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-1994,1994 FIFA Men's World Cup,1994,4,7,round of 16
+WC-1994_NOR,T-53,Norway,NOR,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,3,1,group stage
+WC-1994_IRL,T-60,Republic of Ireland,IRL,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,4,2,round of 16
+WC-1994_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,5,10,quarter-finals
+WC-1994_RUS,T-62,Russia,RUS,Union of European Football Associations,"Europe, Asia",WC-1994,1994 FIFA Men's World Cup,1994,3,7,group stage
+WC-1994_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-1994,1994 FIFA Men's World Cup,1994,4,5,round of 16
+WC-1994_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-1994,1994 FIFA Men's World Cup,1994,3,4,group stage
+WC-1994_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,5,10,quarter-finals
+WC-1994_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,7,15,third-place match
+WC-1994_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-1994,1994 FIFA Men's World Cup,1994,4,5,round of 16
+WC-1994_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1994,1994 FIFA Men's World Cup,1994,4,3,round of 16
+WC-1998_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-1998,1998 FIFA Men's World Cup,1998,5,10,quarter-finals
+WC-1998_AUT,T-05,Austria,AUT,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,3,3,group stage
+WC-1998_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,3,3,group stage
+WC-1998_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-1998,1998 FIFA Men's World Cup,1998,7,14,final
+WC-1998_BGR,T-10,Bulgaria,BGR,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,3,1,group stage
+WC-1998_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-1998,1998 FIFA Men's World Cup,1998,3,2,group stage
+WC-1998_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-1998,1998 FIFA Men's World Cup,1998,4,5,round of 16
+WC-1998_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-1998,1998 FIFA Men's World Cup,1998,3,1,group stage
+WC-1998_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,7,11,third-place match
+WC-1998_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,5,9,quarter-finals
+WC-1998_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,4,7,round of 16
+WC-1998_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,7,15,final
+WC-1998_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,5,8,quarter-finals
+WC-1998_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-1998,1998 FIFA Men's World Cup,1998,3,2,group stage
+WC-1998_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,5,8,quarter-finals
+WC-1998_JAM,T-43,Jamaica,JAM,"Confederation of North, Central American and Caribbean Association Football",Caribbean,WC-1998,1998 FIFA Men's World Cup,1998,3,3,group stage
+WC-1998_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-1998,1998 FIFA Men's World Cup,1998,3,1,group stage
+WC-1998_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1998,1998 FIFA Men's World Cup,1998,4,8,round of 16
+WC-1998_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-1998,1998 FIFA Men's World Cup,1998,3,5,group stage
+WC-1998_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,7,13,third-place match
+WC-1998_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-1998,1998 FIFA Men's World Cup,1998,4,6,round of 16
+WC-1998_NOR,T-53,Norway,NOR,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,4,5,round of 16
+WC-1998_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-1998,1998 FIFA Men's World Cup,1998,4,3,round of 16
+WC-1998_ROU,T-61,Romania,ROU,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,4,4,round of 16
+WC-1998_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-1998,1998 FIFA Men's World Cup,1998,3,2,group stage
+WC-1998_SCO,T-64,Scotland,SCO,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,3,2,group stage
+WC-1998_ZAF,T-70,South Africa,ZAF,Confederation of African Football,Africa,WC-1998,1998 FIFA Men's World Cup,1998,3,3,group stage
+WC-1998_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-1998,1998 FIFA Men's World Cup,1998,3,2,group stage
+WC-1998_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,3,8,group stage
+WC-1998_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-1998,1998 FIFA Men's World Cup,1998,3,1,group stage
+WC-1998_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-1998,1998 FIFA Men's World Cup,1998,3,1,group stage
+WC-1998_YUG,T-87,Yugoslavia,YUG,Union of European Football Associations,Europe,WC-1998,1998 FIFA Men's World Cup,1998,4,5,round of 16
+WC-2002_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2002,2002 FIFA Men's World Cup,2002,3,2,group stage
+WC-2002_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,4,6,round of 16
+WC-2002_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2002,2002 FIFA Men's World Cup,2002,7,18,final
+WC-2002_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-2002,2002 FIFA Men's World Cup,2002,3,2,group stage
+WC-2002_CHN,T-14,China,CHN,Asian Football Confederation,East Asia,WC-2002,2002 FIFA Men's World Cup,2002,3,0,group stage
+WC-2002_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2002,2002 FIFA Men's World Cup,2002,3,5,group stage
+WC-2002_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,3,2,group stage
+WC-2002_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,4,5,round of 16
+WC-2002_ECU,T-25,Ecuador,ECU,South American Football Confederation,South America,WC-2002,2002 FIFA Men's World Cup,2002,3,2,group stage
+WC-2002_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,5,6,quarter-finals
+WC-2002_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,3,0,group stage
+WC-2002_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,7,14,final
+WC-2002_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,4,5,round of 16
+WC-2002_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2002,2002 FIFA Men's World Cup,2002,4,5,round of 16
+WC-2002_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2002,2002 FIFA Men's World Cup,2002,4,4,round of 16
+WC-2002_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-2002,2002 FIFA Men's World Cup,2002,3,1,group stage
+WC-2002_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-2002,2002 FIFA Men's World Cup,2002,4,6,round of 16
+WC-2002_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,3,3,group stage
+WC-2002_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,3,6,group stage
+WC-2002_IRL,T-60,Republic of Ireland,IRL,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,4,6,round of 16
+WC-2002_RUS,T-62,Russia,RUS,Union of European Football Associations,"Europe, Asia",WC-2002,2002 FIFA Men's World Cup,2002,3,4,group stage
+WC-2002_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-2002,2002 FIFA Men's World Cup,2002,3,0,group stage
+WC-2002_SEN,T-65,Senegal,SEN,Confederation of African Football,Africa,WC-2002,2002 FIFA Men's World Cup,2002,5,7,quarter-finals
+WC-2002_SVN,T-69,Slovenia,SVN,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,3,2,group stage
+WC-2002_ZAF,T-70,South Africa,ZAF,Confederation of African Football,Africa,WC-2002,2002 FIFA Men's World Cup,2002,3,5,group stage
+WC-2002_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2002,2002 FIFA Men's World Cup,2002,7,8,third-place match
+WC-2002_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,5,10,quarter-finals
+WC-2002_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-2002,2002 FIFA Men's World Cup,2002,4,5,round of 16
+WC-2002_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-2002,2002 FIFA Men's World Cup,2002,3,1,group stage
+WC-2002_TUR,T-80,Turkey,TUR,Union of European Football Associations,"Europe, Asia",WC-2002,2002 FIFA Men's World Cup,2002,7,10,third-place match
+WC-2002_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2002,2002 FIFA Men's World Cup,2002,5,7,quarter-finals
+WC-2002_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-2002,2002 FIFA Men's World Cup,2002,3,4,group stage
+WC-2006_AGO,T-02,Angola,AGO,Confederation of African Football,Africa,WC-2006,2006 FIFA Men's World Cup,2006,3,1,group stage
+WC-2006_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2006,2006 FIFA Men's World Cup,2006,5,11,quarter-finals
+WC-2006_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-2006,2006 FIFA Men's World Cup,2006,4,5,round of 16
+WC-2006_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2006,2006 FIFA Men's World Cup,2006,5,10,quarter-finals
+WC-2006_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2006,2006 FIFA Men's World Cup,2006,3,3,group stage
+WC-2006_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_CZE,T-20,Czech Republic,CZE,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,3,3,group stage
+WC-2006_ECU,T-25,Ecuador,ECU,South American Football Confederation,South America,WC-2006,2006 FIFA Men's World Cup,2006,4,5,round of 16
+WC-2006_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,5,6,quarter-finals
+WC-2006_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,7,9,final
+WC-2006_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,7,14,third-place match
+WC-2006_GHA,T-32,Ghana,GHA,Confederation of African Football,Africa,WC-2006,2006 FIFA Men's World Cup,2006,4,4,round of 16
+WC-2006_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,7,12,final
+WC-2006_CIV,T-42,Ivory Coast,CIV,Confederation of African Football,Africa,WC-2006,2006 FIFA Men's World Cup,2006,3,5,group stage
+WC-2006_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2006,2006 FIFA Men's World Cup,2006,4,5,round of 16
+WC-2006_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,4,3,round of 16
+WC-2006_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,7,7,third-place match
+WC-2006_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_SCG,T-67,Serbia and Montenegro,SCG,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2006_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2006,2006 FIFA Men's World Cup,2006,3,3,group stage
+WC-2006_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,4,9,round of 16
+WC-2006_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,4,3,round of 16
+WC-2006_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,4,4,round of 16
+WC-2006_TGO,T-77,Togo,TGO,Confederation of African Football,Africa,WC-2006,2006 FIFA Men's World Cup,2006,3,1,group stage
+WC-2006_TTO,T-78,Trinidad and Tobago,TTO,"Confederation of North, Central American and Caribbean Association Football",Caribbean,WC-2006,2006 FIFA Men's World Cup,2006,3,0,group stage
+WC-2006_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-2006,2006 FIFA Men's World Cup,2006,3,3,group stage
+WC-2006_UKR,T-81,Ukraine,UKR,Union of European Football Associations,Europe,WC-2006,2006 FIFA Men's World Cup,2006,5,5,quarter-finals
+WC-2006_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2006,2006 FIFA Men's World Cup,2006,3,2,group stage
+WC-2010_DZA,T-01,Algeria,DZA,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,3,0,group stage
+WC-2010_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2010,2010 FIFA Men's World Cup,2010,5,10,quarter-finals
+WC-2010_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-2010,2010 FIFA Men's World Cup,2010,3,3,group stage
+WC-2010_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2010,2010 FIFA Men's World Cup,2010,5,9,quarter-finals
+WC-2010_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,3,2,group stage
+WC-2010_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-2010,2010 FIFA Men's World Cup,2010,4,3,round of 16
+WC-2010_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,3,group stage
+WC-2010_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,4,3,round of 16
+WC-2010_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,1,group stage
+WC-2010_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,7,16,third-place match
+WC-2010_GHA,T-32,Ghana,GHA,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,5,5,quarter-finals
+WC-2010_GRC,T-33,Greece,GRC,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,2,group stage
+WC-2010_HND,T-35,Honduras,HND,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2010,2010 FIFA Men's World Cup,2010,3,0,group stage
+WC-2010_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,4,group stage
+WC-2010_CIV,T-42,Ivory Coast,CIV,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,3,4,group stage
+WC-2010_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2010,2010 FIFA Men's World Cup,2010,4,4,round of 16
+WC-2010_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2010,2010 FIFA Men's World Cup,2010,4,4,round of 16
+WC-2010_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,7,12,final
+WC-2010_NZL,T-49,New Zealand,NZL,Oceania Football Confederation,Oceania,WC-2010,2010 FIFA Men's World Cup,2010,3,2,group stage
+WC-2010_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,3,3,group stage
+WC-2010_PRK,T-51,North Korea,PRK,Asian Football Confederation,East Asia,WC-2010,2010 FIFA Men's World Cup,2010,3,1,group stage
+WC-2010_PRY,T-55,Paraguay,PRY,South American Football Confederation,South America,WC-2010,2010 FIFA Men's World Cup,2010,5,3,quarter-finals
+WC-2010_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,4,7,round of 16
+WC-2010_SRB,T-66,Serbia,SRB,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,2,group stage
+WC-2010_SVK,T-68,Slovakia,SVK,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,4,5,round of 16
+WC-2010_SVN,T-69,Slovenia,SVN,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,3,group stage
+WC-2010_ZAF,T-70,South Africa,ZAF,Confederation of African Football,Africa,WC-2010,2010 FIFA Men's World Cup,2010,3,3,group stage
+WC-2010_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2010,2010 FIFA Men's World Cup,2010,4,6,round of 16
+WC-2010_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,7,8,final
+WC-2010_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-2010,2010 FIFA Men's World Cup,2010,3,1,group stage
+WC-2010_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2010,2010 FIFA Men's World Cup,2010,4,5,round of 16
+WC-2010_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-2010,2010 FIFA Men's World Cup,2010,7,11,third-place match
+WC-2014_DZA,T-01,Algeria,DZA,Confederation of African Football,Africa,WC-2014,2014 FIFA Men's World Cup,2014,4,7,round of 16
+WC-2014_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,7,8,final
+WC-2014_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-2014,2014 FIFA Men's World Cup,2014,3,3,group stage
+WC-2014_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,5,6,quarter-finals
+WC-2014_BIH,T-08,Bosnia and Herzegovina,BIH,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,4,group stage
+WC-2014_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,7,11,third-place match
+WC-2014_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-2014,2014 FIFA Men's World Cup,2014,3,1,group stage
+WC-2014_CHL,T-13,Chile,CHL,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,4,6,round of 16
+WC-2014_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,5,12,quarter-finals
+WC-2014_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2014,2014 FIFA Men's World Cup,2014,5,5,quarter-finals
+WC-2014_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,6,group stage
+WC-2014_ECU,T-25,Ecuador,ECU,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,3,3,group stage
+WC-2014_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,2,group stage
+WC-2014_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,5,10,quarter-finals
+WC-2014_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,7,18,final
+WC-2014_GHA,T-32,Ghana,GHA,Confederation of African Football,Africa,WC-2014,2014 FIFA Men's World Cup,2014,3,4,group stage
+WC-2014_GRC,T-33,Greece,GRC,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,4,3,round of 16
+WC-2014_HND,T-35,Honduras,HND,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2014,2014 FIFA Men's World Cup,2014,3,1,group stage
+WC-2014_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-2014,2014 FIFA Men's World Cup,2014,3,1,group stage
+WC-2014_ITA,T-41,Italy,ITA,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,2,group stage
+WC-2014_CIV,T-42,Ivory Coast,CIV,Confederation of African Football,Africa,WC-2014,2014 FIFA Men's World Cup,2014,3,4,group stage
+WC-2014_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2014,2014 FIFA Men's World Cup,2014,3,2,group stage
+WC-2014_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2014,2014 FIFA Men's World Cup,2014,4,5,round of 16
+WC-2014_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,7,15,third-place match
+WC-2014_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-2014,2014 FIFA Men's World Cup,2014,4,3,round of 16
+WC-2014_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,4,group stage
+WC-2014_RUS,T-62,Russia,RUS,Union of European Football Associations,"Europe, Asia",WC-2014,2014 FIFA Men's World Cup,2014,3,2,group stage
+WC-2014_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2014,2014 FIFA Men's World Cup,2014,3,3,group stage
+WC-2014_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,3,4,group stage
+WC-2014_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-2014,2014 FIFA Men's World Cup,2014,4,7,round of 16
+WC-2014_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2014,2014 FIFA Men's World Cup,2014,4,5,round of 16
+WC-2014_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-2014,2014 FIFA Men's World Cup,2014,4,4,round of 16
+WC-2018_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2018,2018 FIFA Men's World Cup,2018,4,6,round of 16
+WC-2018_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,7,16,third-place match
+WC-2018_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2018,2018 FIFA Men's World Cup,2018,5,8,quarter-finals
+WC-2018_COL,T-16,Colombia,COL,South American Football Confederation,South America,WC-2018,2018 FIFA Men's World Cup,2018,4,6,round of 16
+WC-2018_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,7,14,final
+WC-2018_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,4,3,round of 16
+WC-2018_EGY,T-26,Egypt,EGY,Confederation of African Football,Africa,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,7,12,third-place match
+WC-2018_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,7,14,final
+WC-2018_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_ISL,T-37,Iceland,ISL,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2018,2018 FIFA Men's World Cup,2018,4,6,round of 16
+WC-2018_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2018,2018 FIFA Men's World Cup,2018,4,3,round of 16
+WC-2018_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_NGA,T-50,Nigeria,NGA,Confederation of African Football,Africa,WC-2018,2018 FIFA Men's World Cup,2018,3,3,group stage
+WC-2018_PAN,T-54,Panama,PAN,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_PER,T-56,Peru,PER,South American Football Confederation,South America,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,4,6,round of 16
+WC-2018_RUS,T-62,Russia,RUS,Union of European Football Associations,"Europe, Asia",WC-2018,2018 FIFA Men's World Cup,2018,5,11,quarter-finals
+WC-2018_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_SEN,T-65,Senegal,SEN,Confederation of African Football,Africa,WC-2018,2018 FIFA Men's World Cup,2018,3,4,group stage
+WC-2018_SRB,T-66,Serbia,SRB,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,3,2,group stage
+WC-2018_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2018,2018 FIFA Men's World Cup,2018,3,3,group stage
+WC-2018_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,4,7,round of 16
+WC-2018_SWE,T-74,Sweden,SWE,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,5,6,quarter-finals
+WC-2018_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-2018,2018 FIFA Men's World Cup,2018,4,5,round of 16
+WC-2018_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-2018,2018 FIFA Men's World Cup,2018,3,5,group stage
+WC-2018_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-2018,2018 FIFA Men's World Cup,2018,5,7,quarter-finals
+WC-2022_ARG,T-03,Argentina,ARG,South American Football Confederation,South America,WC-2022,2022 FIFA Men's World Cup,2022,7,15,final
+WC-2022_AUS,T-04,Australia,AUS,Asian Football Confederation,Oceania,WC-2022,2022 FIFA Men's World Cup,2022,4,4,round of 16
+WC-2022_BEL,T-06,Belgium,BEL,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,3,1,group stage
+WC-2022_BRA,T-09,Brazil,BRA,South American Football Confederation,South America,WC-2022,2022 FIFA Men's World Cup,2022,5,8,quarter-finals
+WC-2022_CMR,T-11,Cameroon,CMR,Confederation of African Football,Africa,WC-2022,2022 FIFA Men's World Cup,2022,3,4,group stage
+WC-2022_CAN,T-12,Canada,CAN,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2022,2022 FIFA Men's World Cup,2022,3,2,group stage
+WC-2022_CRI,T-17,Costa Rica,CRI,"Confederation of North, Central American and Caribbean Association Football",Central America,WC-2022,2022 FIFA Men's World Cup,2022,3,3,group stage
+WC-2022_HRV,T-18,Croatia,HRV,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,7,8,third-place match
+WC-2022_DNK,T-22,Denmark,DNK,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,3,1,group stage
+WC-2022_ECU,T-25,Ecuador,ECU,South American Football Confederation,South America,WC-2022,2022 FIFA Men's World Cup,2022,3,4,group stage
+WC-2022_ENG,T-28,England,ENG,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,5,13,quarter-finals
+WC-2022_FRA,T-30,France,FRA,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,7,16,final
+WC-2022_DEU,T-31,Germany,DEU,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,3,6,group stage
+WC-2022_GHA,T-32,Ghana,GHA,Confederation of African Football,Africa,WC-2022,2022 FIFA Men's World Cup,2022,3,5,group stage
+WC-2022_IRN,T-38,Iran,IRN,Asian Football Confederation,Middle East,WC-2022,2022 FIFA Men's World Cup,2022,3,4,group stage
+WC-2022_JPN,T-44,Japan,JPN,Asian Football Confederation,East Asia,WC-2022,2022 FIFA Men's World Cup,2022,4,5,round of 16
+WC-2022_MEX,T-46,Mexico,MEX,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2022,2022 FIFA Men's World Cup,2022,3,2,group stage
+WC-2022_MAR,T-47,Morocco,MAR,Confederation of African Football,Africa,WC-2022,2022 FIFA Men's World Cup,2022,7,6,third-place match
+WC-2022_NLD,T-48,Netherlands,NLD,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,5,10,quarter-finals
+WC-2022_POL,T-57,Poland,POL,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,4,3,round of 16
+WC-2022_PRT,T-58,Portugal,PRT,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,5,12,quarter-finals
+WC-2022_QAT,T-59,Qatar,QAT,Asian Football Confederation,Middle East,WC-2022,2022 FIFA Men's World Cup,2022,3,1,group stage
+WC-2022_SAU,T-63,Saudi Arabia,SAU,Asian Football Confederation,Middle East,WC-2022,2022 FIFA Men's World Cup,2022,3,3,group stage
+WC-2022_SEN,T-65,Senegal,SEN,Confederation of African Football,Africa,WC-2022,2022 FIFA Men's World Cup,2022,4,5,round of 16
+WC-2022_SRB,T-66,Serbia,SRB,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,3,5,group stage
+WC-2022_KOR,T-71,South Korea,KOR,Asian Football Confederation,East Asia,WC-2022,2022 FIFA Men's World Cup,2022,4,5,round of 16
+WC-2022_ESP,T-73,Spain,ESP,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,4,9,round of 16
+WC-2022_CHE,T-75,Switzerland,CHE,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,4,5,round of 16
+WC-2022_TUN,T-79,Tunisia,TUN,Confederation of African Football,Africa,WC-2022,2022 FIFA Men's World Cup,2022,3,1,group stage
+WC-2022_USA,T-83,United States,USA,"Confederation of North, Central American and Caribbean Association Football",North America,WC-2022,2022 FIFA Men's World Cup,2022,4,3,round of 16
+WC-2022_URY,T-84,Uruguay,URY,South American Football Confederation,South America,WC-2022,2022 FIFA Men's World Cup,2022,3,2,group stage
+WC-2022_WAL,T-85,Wales,WAL,Union of European Football Associations,Europe,WC-2022,2022 FIFA Men's World Cup,2022,3,1,group stage

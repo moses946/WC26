@@ -1,0 +1,40 @@
+{
+  "description": "This is a system generated manifest of files expected to be present in this zip. It can be safely deleted.",
+  "metadata": {
+    "generated_at": "2026-06-12T11:08:13+00:00",
+    "trigger": {
+      "file_hashid": "unknown",
+      "action": "unknown"
+    }
+  },
+  "manifest": [
+    {
+      "filename": "SampleSubmission.csv",
+      "filesize": 1034,
+      "description": "Is an example of what your submission file should look like. The order of the rows does not matter, but the names of the \"ID\" and column headers must be correct.",
+      "created_at": "2026-06-12 11:08:10 UTC",
+      "updated_at": "2026-06-12 11:08:13 UTC"
+    },
+    {
+      "filename": "data.zip",
+      "filesize": 1828405,
+      "description": "Fjelstul World Cup Database.",
+      "created_at": "2026-06-12 10:15:54 UTC",
+      "updated_at": "2026-06-12 10:15:57 UTC"
+    },
+    {
+      "filename": "Train.csv",
+      "filesize": 67520,
+      "description": "Use this training table to get started.",
+      "created_at": "2026-06-11 22:53:18 UTC",
+      "updated_at": "2026-06-11 22:53:20 UTC"
+    },
+    {
+      "filename": "Test.csv",
+      "filesize": 1062,
+      "description": "This is the dataset you will apply your model to.",
+      "created_at": "2026-06-11 22:52:32 UTC",
+      "updated_at": "2026-06-11 22:52:34 UTC"
+    }
+  ]
+}
