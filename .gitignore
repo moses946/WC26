@@ -8,6 +8,3 @@ __pycache__/
 
 # CatBoost training info
 catboost_info/
-
-# Outputs
-output/
