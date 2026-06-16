@@ -19,6 +19,13 @@ from pathlib import Path
 
 warnings.filterwarnings("ignore")
 
+try:
+    import wandb
+    HAS_WANDB = True
+except ImportError:
+    HAS_WANDB = False
+
+
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
@@ -698,6 +705,30 @@ def run_pipeline(train, test, db, tournament_winners):
     imputer = SimpleImputer(strategy="median")
     X = imputer.fit_transform(X)
 
+    if HAS_WANDB:
+        wandb.init(
+            project="world-cup-2026",
+            name="prediction-pipeline",
+            config={
+                "features_count": len(feature_cols),
+                "dataset_rows": len(train),
+                "goals_models": ["ridge", "poisson", "catboost", "lgbm"],
+                "stage_models": ["catboost", "lgbm", "logistic_regression"],
+                "catboost_params": {
+                    "iterations": 500,
+                    "depth": 4,
+                    "learning_rate": 0.05,
+                    "l2_leaf_reg": 5
+                },
+                "lgbm_params": {
+                    "n_estimators": 500,
+                    "max_depth": 4,
+                    "learning_rate": 0.05,
+                    "reg_lambda": 5
+                }
+            }
+        )
+
     # =========================================================================
     # VALIDATION (Leave-One-World-Cup-Out)
     # =========================================================================
@@ -795,13 +826,37 @@ def run_pipeline(train, test, db, tournament_winners):
 
         print(f"  {val_year}: Goals RMSE={rmse:.2f} MAE={mae:.2f} | Stage Acc={acc:.2f} MAE={mae_s:.2f}")
 
-    print(f"\n  --- CV Summary (avg over {len(val_years)} tournaments) ---")
+        if HAS_WANDB:
+            wandb.log({
+                "val_year": val_year,
+                "fold_goals_rmse": rmse,
+                "fold_goals_mae": mae,
+                "fold_stage_acc": acc,
+                "fold_stage_mae": mae_s,
+            })
+
     cv_g = pd.DataFrame(cv_goals)
     cv_s = pd.DataFrame(cv_stage)
-    print(f"  Goals RMSE: {cv_g['rmse'].mean():.2f} ± {cv_g['rmse'].std():.2f}")
-    print(f"  Goals MAE:  {cv_g['mae'].mean():.2f}")
-    print(f"  Stage Acc:  {cv_s['accuracy'].mean():.2f}")
-    print(f"  Stage MAE:  {cv_s['mae'].mean():.2f}")
+    mean_rmse = cv_g['rmse'].mean()
+    std_rmse = cv_g['rmse'].std()
+    mean_mae = cv_g['mae'].mean()
+    mean_acc = cv_s['accuracy'].mean()
+    mean_mae_s = cv_s['mae'].mean()
+
+    print(f"\n  --- CV Summary (avg over {len(val_years)} tournaments) ---")
+    print(f"  Goals RMSE: {mean_rmse:.2f} ± {std_rmse:.2f}")
+    print(f"  Goals MAE:  {mean_mae:.2f}")
+    print(f"  Stage Acc:  {mean_acc:.2f}")
+    print(f"  Stage MAE:  {mean_mae_s:.2f}")
+
+    if HAS_WANDB:
+        wandb.log({
+            "cv_goals_rmse_mean": mean_rmse,
+            "cv_goals_rmse_std": std_rmse,
+            "cv_goals_mae_mean": mean_mae,
+            "cv_stage_acc_mean": mean_acc,
+            "cv_stage_mae_mean": mean_mae_s,
+        })
 
     # =========================================================================
     # FINAL MODEL TRAINING
@@ -887,6 +942,12 @@ def run_pipeline(train, test, db, tournament_winners):
     imp_df = imp_df.sort_values("importance", ascending=False)
     print("\n  Top 20 Features (CatBoost Goals):")
     print(imp_df.head(20).to_string(index=False))
+
+    if HAS_WANDB:
+        try:
+            wandb.log({"feature_importances": wandb.Table(dataframe=imp_df)})
+        except Exception as e:
+            print(f"  W&B warning: Failed to log feature importances: {e}")
 
     # =========================================================================
     # POST-PROCESSING
@@ -1011,6 +1072,18 @@ def run_pipeline(train, test, db, tournament_winners):
 
     if all_pass:
         print("\n🎉 All sanity checks passed!")
+
+    if HAS_WANDB:
+        try:
+            # Save the submission file as a versioned artifact
+            artifact = wandb.Artifact("world_cup_submission", type="submission")
+            artifact.add_file(str(output_path))
+            wandb.log_artifact(artifact)
+            print("  W&B: Logged submission artifact successfully.")
+        except Exception as e:
+            print(f"  W&B warning: Failed to log artifact: {e}")
+        finally:
+            wandb.finish()
 
     return submission
 
