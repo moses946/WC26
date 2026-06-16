@@ -253,6 +253,7 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
         ].sort_values("year")
 
         f = {}
+        f["tournament_year"] = year
 
         # ===================== LAYER 1: Historical Strength =====================
         n = len(history)
@@ -284,7 +285,7 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
         # ===================== LAYER 2: Recency-Weighted =====================
         if n > 0:
             years_ago = year - history["year"]
-            weights = (0.7 ** (years_ago / 4))
+            weights = (0.3 ** (years_ago / 4))  # Aggressive recency decay
             weights_norm = weights / weights.sum()
             gpm = history["total_goals"] / history["matches_played"]
 
@@ -347,6 +348,7 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
         # ===================== LAYER 5: Tournament Experience =====================
         f["total_wc_appearances"] = n
         f["is_debut"] = 1 if n == 0 else 0
+        f["modern_era_debut"] = 1 if n == 0 and year >= 2010 else 0
         if n > 0:
             f["years_since_last_wc"] = year - history["year"].max()
             f["years_since_first_wc"] = year - history["year"].min()
