@@ -16,6 +16,7 @@ import warnings
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from sklearn.metrics import f1_score
 
 warnings.filterwarnings("ignore")
 
@@ -168,7 +169,7 @@ def load_data():
 # PHASE 2: FEATURE ENGINEERING
 # =============================================================================
 
-def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year"):
+def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year", debut_baselines=None):
     """
     Build feature vectors for each row in rows_df.
     For each row, uses only data from tournaments STRICTLY BEFORE that row's year.
@@ -209,8 +210,7 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
         squads["canonical_country"] = squads["team_name"].apply(normalize_name)
         squads["year"] = squads["tournament_id"].str.extract(r"(\d{4})").astype(float)
         # Filter to men's tournaments only
-        squads = squads[squads["tournament_id"].str.contains("Men's|^WC-\\d{4}$", regex=True, na=False) |
-                        ~squads["tournament_name"].str.contains("Women's", na=False)]
+        squads = squads[~squads["tournament_name"].str.contains("Women's", na=False)]
 
     # Manager data for Layer 8
     mgr_appts = db.get("manager_appointments", pd.DataFrame())
@@ -274,6 +274,21 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
             f["hist_sf_rate"] = (history["stage_ordinal"] >= 4).mean()
             f["hist_final_rate"] = (history["stage_ordinal"] >= 5).mean()
             f["hist_champion_rate"] = (history["stage_ordinal"] >= 6).mean()
+        elif debut_baselines:
+            # Use historically-derived debut baselines instead of median imputation
+            f["hist_avg_goals"] = debut_baselines["avg_goals"]
+            f["hist_total_goals"] = debut_baselines["avg_goals"]
+            f["hist_avg_gpm"] = debut_baselines["avg_gpm"]
+            f["hist_avg_matches"] = 3.0  # typical debut match count
+            f["hist_avg_stage"] = debut_baselines["avg_stage"]
+            f["hist_max_stage"] = debut_baselines["avg_stage"]
+            f["hist_min_stage"] = debut_baselines["avg_stage"]
+            f["hist_std_stage"] = 0.0
+            f["hist_knockout_rate"] = 0.0
+            f["hist_qf_rate"] = 0.0
+            f["hist_sf_rate"] = 0.0
+            f["hist_final_rate"] = 0.0
+            f["hist_champion_rate"] = 0.0
         else:
             for col in ["hist_avg_goals", "hist_total_goals", "hist_avg_gpm",
                          "hist_avg_matches", "hist_avg_stage", "hist_max_stage",
@@ -299,6 +314,15 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
                 f[f"last{k}_avg_gpm"] = (last_k["total_goals"] / last_k["matches_played"]).mean()
                 f[f"last{k}_avg_stage"] = last_k["stage_ordinal"].mean()
                 f[f"last{k}_max_stage"] = last_k["stage_ordinal"].max()
+        elif debut_baselines:
+            f["recent_wt_goals"] = debut_baselines["avg_goals"]
+            f["recent_wt_gpm"] = debut_baselines["avg_gpm"]
+            f["recent_wt_stage"] = debut_baselines["avg_stage"]
+            for k in [1, 2, 3]:
+                f[f"last{k}_avg_goals"] = debut_baselines["avg_goals"]
+                f[f"last{k}_avg_gpm"] = debut_baselines["avg_gpm"]
+                f[f"last{k}_avg_stage"] = debut_baselines["avg_stage"]
+                f[f"last{k}_max_stage"] = debut_baselines["avg_stage"]
         else:
             for col in ["recent_wt_goals", "recent_wt_gpm", "recent_wt_stage"]:
                 f[col] = np.nan
@@ -315,10 +339,17 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
             f["trend_gpm_slope"] = np.polyfit(x, gpm_vals, 1)[0]
             mid = n // 2
             f["trend_stage_recent_vs_early"] = stage_vals[mid:].mean() - stage_vals[:mid].mean()
+        elif n == 2:
+            f["trend_stage_slope"] = history.iloc[-1]["stage_ordinal"] - history.iloc[-2]["stage_ordinal"]
+            f["trend_gpm_slope"] = (
+                (history.iloc[-1]["total_goals"] / history.iloc[-1]["matches_played"]) -
+                (history.iloc[-2]["total_goals"] / history.iloc[-2]["matches_played"])
+            )
+            f["trend_stage_recent_vs_early"] = f["trend_stage_slope"]
         else:
-            f["trend_stage_slope"] = 0.0
-            f["trend_gpm_slope"] = 0.0
-            f["trend_stage_recent_vs_early"] = 0.0
+            f["trend_stage_slope"] = np.nan
+            f["trend_gpm_slope"] = np.nan
+            f["trend_stage_recent_vs_early"] = np.nan
 
         # ===================== LAYER 4: Era-Normalized =====================
         # Normalize by the PREVIOUS tournament's averages
@@ -404,9 +435,13 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
             f["peak_vs_last"] = 0
 
         # ===================== LAYER 6: Host Effect =====================
-        f["is_host"] = 1 if (year, country) in host_teams else 0
-        year_host_confeds = host_confed_per_year.get(year, set())
-        f["same_confed_as_host"] = 1 if confed in year_host_confeds else 0
+        if year == 2026:
+            f["is_host"] = 1 if country in HOST_COUNTRIES_2026 else 0
+            f["same_confed_as_host"] = 1 if confed == HOST_CONFEDERATION_2026 else 0
+        else:
+            f["is_host"] = 1 if (year, country) in host_teams else 0
+            year_host_confeds = host_confed_per_year.get(year, set())
+            f["same_confed_as_host"] = 1 if confed in year_host_confeds else 0
 
         # ===================== LAYER 7: Squad Depth =====================
         if not squads.empty and "player_id" in squads.columns:
@@ -483,13 +518,26 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
             ko_wins = ((ko_home["home_team_win"] == True) | (ko_home["home_team_win"] == 1)).sum()
             ko_wins += ((ko_away["away_team_win"] == True) | (ko_away["away_team_win"] == 1)).sum()
 
+            ko_draws = ((ko_home["draw"] == True) | (ko_home["draw"] == 1)).sum()
+            ko_draws += ((ko_away["draw"] == True) | (ko_away["draw"] == 1)).sum()
+            ko_losses = ((ko_home["away_team_win"] == True) | (ko_home["away_team_win"] == 1)).sum()
+            ko_losses += ((ko_away["home_team_win"] == True) | (ko_away["home_team_win"] == 1)).sum()
+
             f["ko_matches"] = ko_n
             f["ko_win_rate"] = ko_wins / ko_n if ko_n > 0 else np.nan
             f["ko_gd_per_match"] = (ko_gf - ko_ga) / ko_n if ko_n > 0 else np.nan
+            f["ko_gf_per_match"] = ko_gf / ko_n if ko_n > 0 else np.nan
+            f["ko_ga_per_match"] = ko_ga / ko_n if ko_n > 0 else np.nan
+            f["ko_draw_rate"] = ko_draws / ko_n if ko_n > 0 else np.nan
+            f["ko_loss_rate"] = ko_losses / ko_n if ko_n > 0 else np.nan
         else:
             f["ko_matches"] = 0
             f["ko_win_rate"] = np.nan
             f["ko_gd_per_match"] = np.nan
+            f["ko_gf_per_match"] = np.nan
+            f["ko_ga_per_match"] = np.nan
+            f["ko_draw_rate"] = np.nan
+            f["ko_loss_rate"] = np.nan
 
         # Penalty history
         if not penalties.empty:
@@ -498,9 +546,31 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
             ]
             f["penalty_kicks_total"] = len(team_pens)
             f["penalty_conversion_rate"] = team_pens["converted"].mean() if len(team_pens) > 0 else np.nan
+            # Penalty shootout features from matches
+            if not matches.empty and "penalty_shootout" in matches.columns:
+                shootout_home = matches[
+                    (matches["year"] < year) &
+                    (matches["penalty_shootout"] == 1) &
+                    (matches["home_canonical"] == country)
+                ]
+                shootout_away = matches[
+                    (matches["year"] < year) &
+                    (matches["penalty_shootout"] == 1) &
+                    (matches["away_canonical"] == country)
+                ]
+                so_count = len(shootout_home) + len(shootout_away)
+                so_wins = ((shootout_home["home_team_win"] == True) | (shootout_home["home_team_win"] == 1)).sum()
+                so_wins += ((shootout_away["away_team_win"] == True) | (shootout_away["away_team_win"] == 1)).sum()
+                f["penalty_shootout_count"] = so_count
+                f["penalty_shootout_win_rate"] = so_wins / so_count if so_count > 0 else np.nan
+            else:
+                f["penalty_shootout_count"] = 0
+                f["penalty_shootout_win_rate"] = np.nan
         else:
             f["penalty_kicks_total"] = 0
             f["penalty_conversion_rate"] = np.nan
+            f["penalty_shootout_count"] = 0
+            f["penalty_shootout_win_rate"] = np.nan
 
         # ===================== LAYER 4b: Group Stage Detail =====================
         if not group_standings.empty:
@@ -515,13 +585,16 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
                 f["hist_gs_avg_gd"] = team_gs["goal_difference"].mean()
                 f["hist_gs_win_rate"] = (team_gs["wins"] / team_gs["played"]).mean()
                 f["hist_gs_advance_rate"] = team_gs["advanced"].mean() if "advanced" in team_gs.columns else np.nan
+                f["hist_gs_clean_sheet_rate"] = (team_gs["goals_against"] == 0).mean()
             else:
                 for col in ["hist_gs_avg_points", "hist_gs_avg_gf", "hist_gs_avg_ga",
-                             "hist_gs_avg_gd", "hist_gs_win_rate", "hist_gs_advance_rate"]:
+                             "hist_gs_avg_gd", "hist_gs_win_rate", "hist_gs_advance_rate",
+                             "hist_gs_clean_sheet_rate"]:
                     f[col] = np.nan
         else:
             for col in ["hist_gs_avg_points", "hist_gs_avg_gf", "hist_gs_avg_ga",
-                         "hist_gs_avg_gd", "hist_gs_win_rate", "hist_gs_advance_rate"]:
+                         "hist_gs_avg_gd", "hist_gs_win_rate", "hist_gs_advance_rate",
+                         "hist_gs_clean_sheet_rate"]:
                 f[col] = np.nan
 
         # ===================== LAYER 11: Confederation Strength =====================
@@ -550,7 +623,25 @@ def build_features_for_rows(rows_df, full_history_df, db, current_year_col="year
         # ===================== Tournament team count =====================
         tourney_info = db["tournaments"]
         t_info = tourney_info[tourney_info["year"] == year]
-        f["tournament_team_count"] = t_info["count_teams"].values[0] if len(t_info) > 0 else 32
+        f["tournament_team_count"] = t_info["count_teams"].values[0] if len(t_info) > 0 else 48
+
+        # ===================== Historical confederation slot count =====================
+        # Per-tournament count of teams from this confederation (trainable signal)
+        qualified = db.get("qualified_teams", pd.DataFrame())
+        if not qualified.empty and "team_name" in qualified.columns:
+            qual_norm = qualified.copy()
+            qual_norm["canonical"] = qual_norm["team_name"].apply(normalize_name)
+            qual_norm["q_year"] = qual_norm["tournament_id"].str.extract(r"(\d{4})").astype(float)
+            # Get confed mapping from full history
+            confed_map = full_history_df.groupby("canonical_country")["confederation_name"].last().to_dict()
+            qual_norm["confed"] = qual_norm["canonical"].map(confed_map)
+            # For this year, count how many from same confed qualified
+            same_confed_same_year = qual_norm[
+                (qual_norm["q_year"] == year) & (qual_norm["confed"] == confed)
+            ]
+            f["confed_slot_count"] = len(same_confed_same_year)
+        else:
+            f["confed_slot_count"] = 0
 
         # ===================== Confederation encoding =====================
         f["confederation_name"] = confed
@@ -660,6 +751,17 @@ def compute_debut_baselines(train):
 # PHASE 4: MODELING & VALIDATION
 # =============================================================================
 
+def align_proba(model, X, n_all_classes=7):
+    """Align predict_proba output to a fixed set of class indices [0..n_all_classes-1]."""
+    proba_raw = model.predict_proba(X)
+    aligned = np.zeros((len(X), n_all_classes))
+    for col_idx, cls in enumerate(model.classes_):
+        cls_int = int(cls)
+        if cls_int < n_all_classes:
+            aligned[:, cls_int] = proba_raw[:, col_idx]
+    return aligned
+
+
 def run_pipeline(train, test, db, tournament_winners):
     """Full modeling pipeline: feature engineering, validation, prediction."""
     from sklearn.linear_model import Ridge, LogisticRegression, PoissonRegressor
@@ -717,16 +819,20 @@ def run_pipeline(train, test, db, tournament_winners):
                 "goals_models": ["ridge", "poisson", "catboost", "lgbm"],
                 "stage_models": ["catboost", "lgbm", "logistic_regression"],
                 "catboost_params": {
-                    "iterations": 500,
-                    "depth": 4,
+                    "iterations": 300,
+                    "depth": 3,
                     "learning_rate": 0.05,
-                    "l2_leaf_reg": 5
+                    "l2_leaf_reg": 15,
+                    "min_data_in_leaf": 5,
+                    "subsample": 0.8
                 },
                 "lgbm_params": {
-                    "n_estimators": 500,
-                    "max_depth": 4,
+                    "n_estimators": 300,
+                    "max_depth": 3,
                     "learning_rate": 0.05,
-                    "reg_lambda": 5
+                    "reg_lambda": 15,
+                    "min_child_samples": 5,
+                    "subsample": 0.8
                 }
             }
         )
@@ -748,85 +854,95 @@ def run_pipeline(train, test, db, tournament_winners):
         mask_tr = train["year"] != val_year
         mask_val = train["year"] == val_year
 
-        X_tr, X_val = X[mask_tr], X[mask_val]
-        y_g_tr, y_g_val = y_goals[mask_tr], y_goals[mask_val]
-        y_s_tr, y_s_val = y_stage[mask_tr], y_stage[mask_val]
+        X_tr_full, X_val = X[mask_tr], X[mask_val]
+        y_g_tr_full, y_g_val = y_goals[mask_tr], y_goals[mask_val]
+        y_s_tr_full, y_s_val = y_stage[mask_tr], y_stage[mask_val]
+
+        # Inner holdout: use most recent tournament in training fold
+        tr_years = train.loc[mask_tr, "year"]
+        inner_val_year = tr_years.max()
+        mask_inner_tr = mask_tr & (train["year"] != inner_val_year)
+        mask_inner_es = mask_tr & (train["year"] == inner_val_year)
+
+        X_inner_tr = X[mask_inner_tr]
+        X_inner_es = X[mask_inner_es]
+        y_g_inner_tr = y_goals[mask_inner_tr]
+        y_g_inner_es = y_goals[mask_inner_es]
+        y_s_inner_tr = y_stage[mask_inner_tr]
+        y_s_inner_es = y_stage[mask_inner_es]
 
         # --- Goals models ---
         g_preds = {}
 
         ridge = Ridge(alpha=10.0)
-        ridge.fit(X_tr, y_g_tr)
+        ridge.fit(X_tr_full, y_g_tr_full)
         g_preds["ridge"] = ridge.predict(X_val)
 
         try:
             poisson = PoissonRegressor(alpha=1.0, max_iter=1000)
-            poisson.fit(X_tr, y_g_tr)
+            poisson.fit(X_tr_full, y_g_tr_full)
             g_preds["poisson"] = poisson.predict(X_val)
         except Exception:
             pass
 
-        cb_r = CatBoostRegressor(iterations=500, depth=4, learning_rate=0.05,
-                                  l2_leaf_reg=5, verbose=0, random_seed=42,
-                                  early_stopping_rounds=50)
-        cb_r.fit(X_tr, y_g_tr, eval_set=(X_val, y_g_val), verbose=0)
+        cb_r = CatBoostRegressor(iterations=300, depth=3, learning_rate=0.05,
+                                  l2_leaf_reg=15, min_data_in_leaf=5,
+                                  bootstrap_type="Bernoulli", subsample=0.8,
+                                  verbose=0, random_seed=42,
+                                  early_stopping_rounds=50, loss_function="RMSE")
+        cb_r.fit(X_inner_tr, y_g_inner_tr, eval_set=(X_inner_es, y_g_inner_es), verbose=0)
         g_preds["catboost"] = cb_r.predict(X_val)
 
-        lgbm_r = LGBMRegressor(n_estimators=500, max_depth=4, learning_rate=0.05,
-                                reg_lambda=5, verbose=-1, random_state=42, n_jobs=1)
-        lgbm_r.fit(X_tr, y_g_tr, eval_set=[(X_val, y_g_val)],
+        lgbm_r = LGBMRegressor(n_estimators=300, max_depth=3, learning_rate=0.05,
+                                reg_lambda=15, min_child_samples=5, subsample=0.8,
+                                verbose=-1, random_state=42, n_jobs=1)
+        lgbm_r.fit(X_inner_tr, y_g_inner_tr, eval_set=[(X_inner_es, y_g_inner_es)],
                    callbacks=[lgb.early_stopping(50, verbose=False), lgb.log_evaluation(0)])
         g_preds["lgbm"] = lgbm_r.predict(X_val)
 
         ens_goals = np.mean(list(g_preds.values()), axis=0)
-        ens_goals = np.maximum(ens_goals, 0).round()
-        rmse = np.sqrt(mean_squared_error(y_g_val, ens_goals))
-        mae = mean_absolute_error(y_g_val, ens_goals)
-        cv_goals.append({"year": val_year, "rmse": rmse, "mae": mae})
+        ens_goals = np.maximum(ens_goals, 0)
+        rmse = np.sqrt(mean_squared_error(y_g_val, np.round(ens_goals)))
+        mae = mean_absolute_error(y_g_val, np.round(ens_goals))
+        cv_goals.append({"year": val_year, "rmse": rmse, "mae": mae,
+                         "per_model_rmse": {k: np.sqrt(mean_squared_error(y_g_val, np.round(np.maximum(v, 0)))) for k, v in g_preds.items()}})
 
         # --- Stage models ---
-        s_probas = []
-
-        cb_c = CatBoostClassifier(iterations=500, depth=4, learning_rate=0.05,
-                                   l2_leaf_reg=5, verbose=0, random_seed=42,
+        cb_c = CatBoostClassifier(iterations=300, depth=3, learning_rate=0.05,
+                                   l2_leaf_reg=15, min_data_in_leaf=5,
+                                   bootstrap_type="Bernoulli", subsample=0.8,
+                                   verbose=0, random_seed=42,
                                    early_stopping_rounds=50, loss_function="MultiClass",
                                    auto_class_weights="Balanced")
-        cb_c.fit(X_tr, y_s_tr, eval_set=(X_val, y_s_val), verbose=0)
-        s_probas.append(cb_c.predict_proba(X_val))
+        cb_c.fit(X_inner_tr, y_s_inner_tr, eval_set=(X_inner_es, y_s_inner_es), verbose=0)
 
-        lgbm_c = LGBMClassifier(n_estimators=500, max_depth=4, learning_rate=0.05,
-                                 reg_lambda=5, verbose=-1, random_state=42, n_jobs=1,
+        lgbm_c = LGBMClassifier(n_estimators=300, max_depth=3, learning_rate=0.05,
+                                 reg_lambda=15, min_child_samples=5, subsample=0.8,
+                                 verbose=-1, random_state=42, n_jobs=1,
                                  class_weight="balanced")
-        lgbm_c.fit(X_tr, y_s_tr, eval_set=[(X_val, y_s_val)],
+        lgbm_c.fit(X_inner_tr, y_s_inner_tr, eval_set=[(X_inner_es, y_s_inner_es)],
                    callbacks=[lgb.early_stopping(50, verbose=False), lgb.log_evaluation(0)])
-        s_probas.append(lgbm_c.predict_proba(X_val))
+
+        s_probas_aligned = [align_proba(cb_c, X_val), align_proba(lgbm_c, X_val)]
 
         try:
             lr = LogisticRegression(max_iter=1000, C=1.0, multi_class="multinomial",
                                      class_weight="balanced")
-            lr.fit(X_tr, y_s_tr)
-            s_probas.append(lr.predict_proba(X_val))
+            lr.fit(X_tr_full, y_s_tr_full)
+            s_probas_aligned.append(align_proba(lr, X_val))
         except Exception:
             pass
 
-        # Average probabilities
-        n_classes = max(p.shape[1] for p in s_probas)
-        aligned = []
-        for p in s_probas:
-            if p.shape[1] < n_classes:
-                padded = np.zeros((p.shape[0], n_classes))
-                padded[:, :p.shape[1]] = p
-                aligned.append(padded)
-            else:
-                aligned.append(p)
-        avg_p = np.mean(aligned, axis=0)
+        # Average probabilities (already aligned to 7 classes)
+        avg_p = np.mean(s_probas_aligned, axis=0)
         ens_stage = np.argmax(avg_p, axis=1)
 
         acc = accuracy_score(y_s_val, ens_stage)
+        f1_macro = f1_score(y_s_val, ens_stage, average="macro", zero_division=0)
         mae_s = mean_absolute_error(y_s_val, ens_stage)
-        cv_stage.append({"year": val_year, "accuracy": acc, "mae": mae_s})
+        cv_stage.append({"year": val_year, "accuracy": acc, "f1_macro": f1_macro, "mae": mae_s})
 
-        print(f"  {val_year}: Goals RMSE={rmse:.2f} MAE={mae:.2f} | Stage Acc={acc:.2f} MAE={mae_s:.2f}")
+        print(f"  {val_year}: Goals RMSE={rmse:.2f} MAE={mae:.2f} | Stage Acc={acc:.2f} F1={f1_macro:.3f} MAE={mae_s:.2f}")
 
         if HAS_WANDB:
             wandb.log({
@@ -843,13 +959,26 @@ def run_pipeline(train, test, db, tournament_winners):
     std_rmse = cv_g['rmse'].std()
     mean_mae = cv_g['mae'].mean()
     mean_acc = cv_s['accuracy'].mean()
+    mean_f1 = cv_s['f1_macro'].mean()
     mean_mae_s = cv_s['mae'].mean()
 
     print(f"\n  --- CV Summary (avg over {len(val_years)} tournaments) ---")
     print(f"  Goals RMSE: {mean_rmse:.2f} ± {std_rmse:.2f}")
     print(f"  Goals MAE:  {mean_mae:.2f}")
     print(f"  Stage Acc:  {mean_acc:.2f}")
+    print(f"  Stage F1:   {mean_f1:.3f}")
     print(f"  Stage MAE:  {mean_mae_s:.2f}")
+
+    # Compute inverse-RMSE weights for goals ensemble
+    model_rmse_agg = {}
+    for fold_data in cv_goals:
+        for model_name, model_rmse in fold_data["per_model_rmse"].items():
+            model_rmse_agg.setdefault(model_name, []).append(model_rmse)
+    model_avg_rmse = {k: np.mean(v) for k, v in model_rmse_agg.items()}
+    inv_rmse = {k: 1.0 / v for k, v in model_avg_rmse.items()}
+    total_inv = sum(inv_rmse.values())
+    goals_weights = {k: v / total_inv for k, v in inv_rmse.items()}
+    print(f"\n  Goals ensemble weights (inverse-RMSE): {goals_weights}")
 
     if HAS_WANDB:
         wandb.log({
@@ -869,7 +998,7 @@ def run_pipeline(train, test, db, tournament_winners):
 
     # Build test features
     test_rows_df, debut_baselines = build_2026_test_rows(test, train, db)
-    test_feature_df = build_features_for_rows(test_rows_df, train, db)
+    test_feature_df = build_features_for_rows(test_rows_df, train, db, debut_baselines=debut_baselines)
 
     # Encode categoricals for test
     test_feature_df["confed_enc"] = le_confed.transform(
@@ -888,7 +1017,7 @@ def run_pipeline(train, test, db, tournament_winners):
 
     # Train final models on ALL data
     final_g_preds = {}
-    final_s_probas = []
+    final_s_models = []
 
     # Ridge
     ridge_f = Ridge(alpha=10.0)
@@ -904,37 +1033,43 @@ def run_pipeline(train, test, db, tournament_winners):
         pass
 
     # CatBoost Regressor
-    cb_r_f = CatBoostRegressor(iterations=600, depth=4, learning_rate=0.05,
-                                l2_leaf_reg=5, verbose=0, random_seed=42)
+    cb_r_f = CatBoostRegressor(iterations=300, depth=3, learning_rate=0.05,
+                                l2_leaf_reg=15, min_data_in_leaf=5,
+                                bootstrap_type="Bernoulli", subsample=0.8,
+                                verbose=0, random_seed=42, loss_function="RMSE")
     cb_r_f.fit(X, y_goals)
     final_g_preds["catboost"] = cb_r_f.predict(X_test)
 
     # LightGBM Regressor
-    lgbm_r_f = LGBMRegressor(n_estimators=600, max_depth=4, learning_rate=0.05,
-                              reg_lambda=5, verbose=-1, random_state=42, n_jobs=1)
+    lgbm_r_f = LGBMRegressor(n_estimators=300, max_depth=3, learning_rate=0.05,
+                              reg_lambda=15, min_child_samples=5, subsample=0.8,
+                              verbose=-1, random_state=42, n_jobs=1)
     lgbm_r_f.fit(X, y_goals)
     final_g_preds["lgbm"] = lgbm_r_f.predict(X_test)
 
     # CatBoost Classifier
-    cb_c_f = CatBoostClassifier(iterations=600, depth=4, learning_rate=0.05,
-                                 l2_leaf_reg=5, verbose=0, random_seed=42,
+    cb_c_f = CatBoostClassifier(iterations=300, depth=3, learning_rate=0.05,
+                                 l2_leaf_reg=15, min_data_in_leaf=5,
+                                 bootstrap_type="Bernoulli", subsample=0.8,
+                                 verbose=0, random_seed=42,
                                  loss_function="MultiClass", auto_class_weights="Balanced")
     cb_c_f.fit(X, y_stage)
-    final_s_probas.append(cb_c_f.predict_proba(X_test))
+    final_s_models.append(cb_c_f)
 
     # LightGBM Classifier
-    lgbm_c_f = LGBMClassifier(n_estimators=600, max_depth=4, learning_rate=0.05,
-                               reg_lambda=5, verbose=-1, random_state=42, n_jobs=1,
+    lgbm_c_f = LGBMClassifier(n_estimators=300, max_depth=3, learning_rate=0.05,
+                               reg_lambda=15, min_child_samples=5, subsample=0.8,
+                               verbose=-1, random_state=42, n_jobs=1,
                                class_weight="balanced")
     lgbm_c_f.fit(X, y_stage)
-    final_s_probas.append(lgbm_c_f.predict_proba(X_test))
+    final_s_models.append(lgbm_c_f)
 
     # Logistic Regression
     try:
         lr_f = LogisticRegression(max_iter=1000, C=1.0, multi_class="multinomial",
                                    class_weight="balanced")
         lr_f.fit(X, y_stage)
-        final_s_probas.append(lr_f.predict_proba(X_test))
+        final_s_models.append(lr_f)
     except Exception:
         pass
 
@@ -958,25 +1093,18 @@ def run_pipeline(train, test, db, tournament_winners):
     print("POST-PROCESSING")
     print("-" * 50)
 
-    # Goals ensemble
-    raw_goals = np.mean(list(final_g_preds.values()), axis=0)
+    # Goals ensemble: weighted by inverse CV RMSE
+    raw_goals = sum(goals_weights.get(name, 1.0/len(final_g_preds)) * preds
+                    for name, preds in final_g_preds.items())
     raw_goals = np.maximum(raw_goals, 0)
 
-    # Stage ensemble: average probabilities
+    # Stage ensemble: average aligned probabilities
     n_test = len(test)
-    n_classes = max(p.shape[1] for p in final_s_probas)
-    aligned = []
-    for p in final_s_probas:
-        if p.shape[1] < n_classes:
-            padded = np.zeros((n_test, n_classes))
-            padded[:, :p.shape[1]] = p
-            aligned.append(padded)
-        else:
-            aligned.append(p)
+    aligned = [align_proba(m, X_test) for m in final_s_models]
     avg_proba = np.mean(aligned, axis=0)
 
     # Compute team strength score (expected ordinal stage)
-    strength = avg_proba @ np.arange(n_classes)
+    strength = avg_proba @ np.arange(7)
 
     # Rank-and-fill: assign stages based on strength ranking
     ranked_idx = np.argsort(-strength)  # strongest first
@@ -991,9 +1119,6 @@ def run_pipeline(train, test, db, tournament_winners):
                 slot_pos += 1
 
     # Adjust goals based on predicted stage + 2026 format
-    # The raw model was trained on historical data where avg matches per team
-    # was lower. With 48 teams and an extra knockout round, teams play more.
-    # Compute actual historical average matches per stage to get proper GPM.
     hist_avg_matches_by_stage = {}
     for s_val in range(7):
         stage_rows = train[train["stage_ordinal"] == s_val]
@@ -1003,29 +1128,56 @@ def run_pipeline(train, test, db, tournament_winners):
     print(f"  Historical avg matches per team: {overall_hist_avg_matches:.1f}")
     print(f"  Historical avg matches by stage: {hist_avg_matches_by_stage}")
 
-    predicted_goals = np.zeros(n_test, dtype=int)
+    # Compute GPM bounds from historical data for ceiling/floor
+    stage_gpm_bounds = {}
+    for s in range(7):
+        rows = train[train["stage_ordinal"] == s]
+        if len(rows) > 0:
+            gpm = rows["total_goals"] / rows["matches_played"]
+            stage_gpm_bounds[s] = {
+                "floor": max(0.3, gpm.quantile(0.05)),
+                "ceil": gpm.quantile(0.95),
+            }
+        else:
+            stage_gpm_bounds[s] = {"floor": 0.3, "ceil": 3.0}
+
+    # Strength percentiles for dilution
+    strength_q75 = np.percentile(strength, 75)
+    strength_q50 = np.percentile(strength, 50)
+
+    predicted_goals = np.zeros(n_test)
     for i in range(n_test):
         stage = predicted_stages[i]
         matches_2026 = MATCHES_2026[stage]
 
-        # Estimate GPM from raw model output
-        # The raw model predicts total_goals trained on historical data
-        # Convert to GPM using historical avg matches, then re-scale to 2026 matches
-        raw_gpm = raw_goals[i] / overall_hist_avg_matches
+        # Stage-specific GPM conversion (Fix 1.2)
+        hist_matches = hist_avg_matches_by_stage.get(stage, overall_hist_avg_matches)
+        raw_gpm = raw_goals[i] / hist_matches
 
-        # Apply a small boost for quality dilution: strong teams score more
-        # against weaker opponents in the expanded 48-team field
-        dilution_boost = 1.0
-        if stage >= 3:  # QF+ teams are strong, benefit from weaker group opponents
-            dilution_boost = 1.08
-        elif stage >= 1:  # R32/R16 teams get a smaller boost
-            dilution_boost = 1.04
+        adjusted = raw_gpm * matches_2026
 
-        adjusted = raw_gpm * matches_2026 * dilution_boost
-        predicted_goals[i] = max(1 if stage == 0 else 2, round(adjusted))
+        # GPM-based ceiling/floor with strength-dependent dilution (Fix 1.1)
+        team_strength = strength[i]
+        if team_strength >= strength_q75:
+            dilution = 1.10 if stage <= 1 else (1.05 if stage == 2 else 1.00)
+        elif team_strength >= strength_q50:
+            dilution = 1.05 if stage <= 1 else 1.00
+        else:
+            dilution = 1.00
 
-    print(f"  Goals range: {predicted_goals.min()} - {predicted_goals.max()}")
-    print(f"  Avg goals/team: {predicted_goals.mean():.1f}")
+        ceil_goals = stage_gpm_bounds[stage]["ceil"] * matches_2026 * dilution
+        floor_goals = stage_gpm_bounds[stage]["floor"] * matches_2026
+
+        adjusted = np.clip(adjusted, floor_goals, ceil_goals)
+        predicted_goals[i] = adjusted
+
+    # Late rounding at submission time (Fix 4.2)
+    predicted_goals = np.array([max(1 if predicted_stages[i] == 0 else 2,
+                                    int(np.floor(predicted_goals[i] + 0.4)))
+                                for i in range(n_test)])
+
+    print(f"  Goals range: {min(predicted_goals)} - {max(predicted_goals)}")
+    print(f"  Avg goals/team: {np.mean(predicted_goals):.1f}")
 
     # =========================================================================
     # BUILD SUBMISSION
