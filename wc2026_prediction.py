@@ -1150,13 +1150,16 @@ def run_pipeline(train, test, db, tournament_winners):
         stage = predicted_stages[i]
         matches_2026 = MATCHES_2026[stage]
 
-        # Stage-specific GPM conversion (Fix 1.2)
-        hist_matches = hist_avg_matches_by_stage.get(stage, overall_hist_avg_matches)
-        raw_gpm = raw_goals[i] / hist_matches
+        # Use overall historical average to get a stable raw GPM
+        # (Using stage-specific historical averages is flawed because stage definitions
+        # like "Stage 1" had 5.45 matches historically but only 4 matches in 2026)
+        raw_gpm = raw_goals[i] / overall_hist_avg_matches
 
-        adjusted = raw_gpm * matches_2026
+        # Apply a format expansion boost (more weak teams = slightly more goals)
+        format_expansion_boost = 1.05
+        adjusted = raw_gpm * matches_2026 * format_expansion_boost
 
-        # GPM-based ceiling/floor with strength-dependent dilution (Fix 1.1)
+        # GPM-based ceiling/floor with strength-dependent dilution
         team_strength = strength[i]
         if team_strength >= strength_q75:
             dilution = 1.10 if stage <= 1 else (1.05 if stage == 2 else 1.00)
